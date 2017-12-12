@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//
+// 後台
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
+});
+
+Route::group(['prefix'=>'product'],function (){
+    Route::get('/', ['as' => 'product.index', 'uses' => 'ProductController@index']);
+});
