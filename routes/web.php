@@ -23,5 +23,6 @@ Route::group(['prefix' => 'admin'], function() {
 });
 
 Route::group(['prefix'=>'product'],function (){
-    Route::get('/', ['as' => 'product.index', 'uses' => 'ProductController@index']);
+    Route::get('/shoplist', ['as' => 'product.index', 'uses' => 'ProductController@ShowProductList']);
+    Route::get('/shopitem',['as' => 'product.index', 'uses' => 'ProductController@ShowProductDetail']);
 });
