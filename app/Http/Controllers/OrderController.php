@@ -10,7 +10,7 @@ class OrderController extends Controller
       return view('admin.index');
   }
   public function ordershow(PostRequest $request ){
-    $order=new PostEloquent::findOrFail($order_id);
+    $order= PostEloquent::findOrFail($order_id);
     return View::make('admin.orderlist',['order'=>$order]);
   }
 }
