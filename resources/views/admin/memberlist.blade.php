@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','訂單觀看')
+@section('title','會員觀看')
 @section('content')
     <div class='container'>
         @if(count($member) == 0)

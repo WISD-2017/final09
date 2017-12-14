@@ -17,18 +17,18 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    <a href="{{route('admin.index')}}">
                       訂單管理後台
                     </a>
                 </li>
                 <li>
-                    <a href="#">訂單觀看</a>
+                    <a href="{{route('admin.order')}}">訂單觀看</a>
                 </li>
                 <li>
-                    <a href="#">商品管理</a>
+                    <a href="{{route('admin.product')}}">商品管理</a>
                 </li>
                 <li>
-                    <a href="#">會員管理</a>
+                    <a href="{{route('admin.member'}}">會員管理</a>
                 </li>
                 <li>
                     <a href="{{ route('/') }}">回到前台</a>

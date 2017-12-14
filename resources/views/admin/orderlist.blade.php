@@ -39,7 +39,7 @@
                                             <span style="padding-left: 10px;">
                                                 <a class="btn btn-xs btn-primary" href="{{ route('order.show',['order'=>$order->id]) }}">
                                                     <i class="glyphicon glyphicon-pencil"></i>
-                                                    <span style="padding-left: 5px;">觀看訂單文章</span>
+                                                    <span style="padding-left: 5px;">觀看訂單</span>
                                                 </a>
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="_method" value="DELETE" />
