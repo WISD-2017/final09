@@ -29,6 +29,6 @@ class Bookcategory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExsit('bookcategory');
+        Schema::dropIfExists('bookcategory');
     }
 }
