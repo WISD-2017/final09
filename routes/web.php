@@ -19,7 +19,10 @@ Route::get('/', function () {
 //
 // 後台
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
+    Route::get('/index', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
+    Route::get('/memberlist',['as'=>'admin.member','uses'=>'OrderController@member']);
+    Route::get('/orderlist',['as'=>'admin.order','uses'=>'OrderController@order']);
+    Route::get('/productlist',['as'=>'admin.product','uses'=>'OrderController@product']);
 });
 
 Route::group(['prefix'=>'product'],function (){
