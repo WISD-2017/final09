@@ -9,8 +9,12 @@ class OrderController extends Controller
   public function index(){
       return view('admin.index');
   }
-  public function ordershow(PostRequest $request ){
-    $order= PostEloquent::findOrFail($order_id);
-    return View::make('admin.orderlist',['order'=>$order]);
+  public function order(PostRequest $request ){
+    return View::make('admin.orderlist');
   }
+    public function member(PostRequest $request ){
+        return View::make('admin.memberlist');
+    } public function product(PostRequest $request ){
+    return View::make('admin.productlist');
+}
 }
