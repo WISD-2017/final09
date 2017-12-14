@@ -31,7 +31,7 @@
                     <a href="#">會員管理</a>
                 </li>
                 <li>
-                    <a href="#">回到前台</a>
+                    <a href="{{ route('/') }}">回到前台</a>
                 </li>
             </ul>
         </div>
