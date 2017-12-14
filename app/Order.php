@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $table='{order}';
-    protected $fillable=['order_id','book_id','quantity'];
-    public $timestamps=true;
-    
+
+    public function Books(){
+        return $this->hasMany(Boosk::class);
+    }
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
 }
