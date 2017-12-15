@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 //
 // 後台
 Route::group(['prefix' => 'admin'], function() {
