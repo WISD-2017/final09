@@ -7,14 +7,14 @@ use APP\Order as PostRequest;
 class OrderController extends Controller
 {
   public function index(){
-      return view('admin.index');
+      return View('admin.index');
   }
   public function order(PostRequest $request ){
-    return View::make('admin.orderlist');
+    return View('admin.orderlist');
   }
     public function member(PostRequest $request ){
-        return View::make('admin.memberlist');
+        return View('admin.memberlist');
     } public function product(PostRequest $request ){
-    return View::make('admin.productlist');
+    return View('admin.productlist');
 }
 }
