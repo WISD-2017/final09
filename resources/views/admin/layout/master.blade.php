@@ -7,9 +7,9 @@
     <meta name="author" content="">
     <title>訂單管理-@yield('title');</title>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css/" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="{{asset('css/simple-sidebar.css')}}" rel="stylesheet">
 </head>
 <body>
     <div id="wrapper">
@@ -28,10 +28,10 @@
                     <a href="{{route('admin.product')}}">商品管理</a>
                 </li>
                 <li>
-                    <a href="{{route('admin.member'}}">會員管理</a>
+                    <a href="{{route('admin.member')}}">會員管理</a>
                 </li>
                 <li>
-                    <a href="{{ route('/') }}">回到前台</a>
+                    <a href="{{ route('firstpage') }}">回到前台</a>
                 </li>
             </ul>
         </div>
@@ -40,7 +40,7 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="@container">
-                    @yield('content');
+                    @yield('content')
                     <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">展開收起菜單</a>
                 </div>
             </div>
@@ -49,8 +49,8 @@
     </div>
     <!-- /#wrapper -->
     <!-- Bootstrap core JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.bumdle.min.js')}}"></script>
     <!-- Menu Toggle Script -->
     <script>
     $("#menu-toggle").click(function(e) {
