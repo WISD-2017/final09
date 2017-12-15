@@ -1,6 +1,6 @@
-@extends('layout.master')
-@section('title','會員觀看')
-@section('content')
+@extends('admin.layout.master');
+@section('title','會員觀看');
+@section('content');
     <div class='container'>
         @if(count($member) == 0)
             <p class="text-center">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>訂單管理-@yield('title')</title>
+    <title>訂單管理-@yield('title');</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css/" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -40,7 +40,7 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="@container">
-                    @yield('content')
+                    @yield('content');
                     <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">展開收起菜單</a>
                 </div>
             </div>

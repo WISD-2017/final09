@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('admin.layout.master')
 @section('title','訂單觀看')
 @section('content')
     <div class='container'>
