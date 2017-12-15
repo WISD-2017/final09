@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Books extends Model
 {
-
     protected $fillable=[
         'book_id',
         'book_name',
@@ -16,7 +15,6 @@ class Books extends Model
         'text',
         'price',
     ];
-
     protected $table="books";
 public function Bookcategury(){
     return $this->hasOne(Bookcategory::class);
