@@ -5,3 +5,4 @@
     <div class='container'>
         歡迎進入後台管理系統
     </div>
+@endsection

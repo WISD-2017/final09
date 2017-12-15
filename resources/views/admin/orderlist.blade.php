@@ -13,7 +13,7 @@
                     <div class="container-fluid" style="padding:0;">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1 style="margin-top:0;">{{ $order->title }}</h1>
+                                <h1 style="margin-top:0;">{{ $order->order_id}}</h1>
                             </div>
                         </div>
                         <div class="row">
@@ -56,6 +56,5 @@
                 </div>
             </div>
         @endforeach
-
-
     </div>
+    @endsection
