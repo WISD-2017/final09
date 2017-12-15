@@ -33,6 +33,6 @@ class Order extends Migration
     public function down()
     {
 
-        Schema::dropIfExsit('order');
+        Schema::dropIfExists('order');
     }
 }

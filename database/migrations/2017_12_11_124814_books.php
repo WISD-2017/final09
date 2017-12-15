@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Wisd extends Migration
+class books extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Wisd extends Migration
      */
     public function up()
     {
-        Schema::create('product',function (Blueprint $table){
+        Schema::create('books',function (Blueprint $table){
            $table->string('book_id',10)->index();
            $table->string('book_name',255);
            $table->integer('inventory');
@@ -32,6 +32,6 @@ class Wisd extends Migration
      */
     public function down()
     {
-        Schema::dropIfExsit('product');
+        Schema::dropIfExists('books');
     }
 }
