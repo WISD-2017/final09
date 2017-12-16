@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Books;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -11,6 +11,7 @@ class ProductController extends Controller
     }
 
     public function ShowProductDetail(){
-        return view('product.ShopItem');
+        $books=books::all()->where('book_id',001);
+        return view('product.ShopItem')->with('books',$books);
     }
 }
