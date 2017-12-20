@@ -11,7 +11,7 @@ class ProductController extends Controller
     }
 
     public function ShowProductDetail(){
-        $books=books::all()->where('book_id',001);
+        $books=books::all();
         return view('product.ShopItem')->with('books',$books);
     }
 }
