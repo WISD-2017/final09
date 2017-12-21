@@ -10,8 +10,8 @@ class ProductController extends Controller
     return view('product.index');
     }
 
-    public function ShowProductDetail(){
-        $books=books::all();
+    public function ShowProductDetail($bookid){
+        $books=books::all()->where('book_id',$bookid);
         return view('product.ShopItem')->with('books',$books);
     }
 }
