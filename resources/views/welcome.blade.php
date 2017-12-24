@@ -78,7 +78,7 @@
                    誠品書局購書網
                 </div>
                 <div class="links">
-                    <a href={{route('product.shoplist')}}>購書</a>
+                    <a href={{route('product.shoplist',0)}}>購書</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
