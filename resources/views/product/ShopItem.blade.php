@@ -59,7 +59,7 @@
             <div class="list-group">
                 <h3 class="my-4">書籍類別</h3>
                 @foreach($categorys as $category)
-                    <a href="{{route('product.shoplist',$category->category_name)}}" class="list-group-item">{{$category->category_name}}</a>
+                    <a href="{{route('product.shoplist',$category->category_id)}}" class="list-group-item">{{$category->category_name}}</a>
                 @endforeach
             </div>
         </div>
