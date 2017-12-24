@@ -31,14 +31,18 @@ Route::get('/', ['as' => 'firstpage', function () {
             'price' => '237',
         ]);
         */
+    /*
     \App\Bookcategory::create([
-        'category_id'=>'001',
-        'category_name'=>'小說',
-        /*
-        'category_id' => '002',
-        'category_name' => '文學',
-*/
+
+       'category_id'=>'001',
+       'category_name'=>'小說',
+
+       'category_id' => '002',
+       'category_name' => '文學',
+
     ]);
+    */
+
     return view('welcome');
 }]);
 //
@@ -51,7 +55,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::group(['prefix' => 'product'], function () {
-    Route::get('/shoplist', ['as' => 'product.shoplist', 'uses' => 'ProductController@ShowProductList']);
+    Route::get('/shoplist/{categoryid}', ['as' => 'product.shoplist', 'uses' => 'ProductController@ShowProductList']);
     Route::get('/shopitem/{bookid}', ['as' => 'product.shopitem', 'uses' => 'ProductController@ShowProductDetail']);
 });
 
