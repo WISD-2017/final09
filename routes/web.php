@@ -13,7 +13,6 @@
 
 Route::get('/', ['as' => 'firstpage', function () {
    /* \App\Books::create([
-
                 'book_id'=>'001',
                 'book_name'=>'教育是一場騙局',
                 'inventory'=>'20',
@@ -31,15 +30,19 @@ Route::get('/', ['as' => 'firstpage', function () {
         'price' => '237',
     ]);
 */
+
+    return view('welcome');
+}]);
+Route::get('test',['as'=>'itfxxkingrow',function(){
     \App\Bookcategory::create([
         'category_id'=>'001',
         'category_name'=>'小說',
-        /*
+    ]);
+    \App\Bookcategory::create([
         'category_id' => '002',
         'category_name' => '文學',
-    */]);
+    ]);
 }]);
-
 //
 // 後台
 Route::group(['prefix' => 'admin'], function () {
