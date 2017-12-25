@@ -16,10 +16,10 @@ class Books extends Model
         'price',
     ];
     protected $table="books";
-public function Bookcategury(){
-    return $this->hasOne(Bookcategory::class);
-}
-public function Order(){
-    return $this->belongsTo(Order::class);
-}
+    public function Bookcategury(){
+        return $this->hasOne(Bookcategory::class);
+    }
+    public function Order(){
+        return $this->belongsTo(Order::class);
+    }
 }

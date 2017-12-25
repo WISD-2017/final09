@@ -14,7 +14,7 @@ class Order extends Migration
     public function up()
     {
         Schema::create('order',function (Blueprint $table){
-            $table->string('order_id',10)->index();
+            $table->increments('id');
             $table->string('book_id',10);
             $table->float('discount');
             $table->integer('quantity');
