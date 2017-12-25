@@ -38,7 +38,31 @@
                 </div>
             </div>
         @endforeach
-            <br>
-            <a href="{{route('books.add')}}" class="btn btn-xs btn-danger">新增資料</a>
+            <form action="/admin/addproducklist" method="POST" role="form">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label>標題</label>
+                    <input name="book_name" class="form-control" placeholder="請輸入書籍標題">
+                </div>
+                <div class="form-group">
+                    <label>內容</label>
+                    <textarea name="text" class="form-control" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>ISBN</label>
+                    <textarea name="ISBN" class="form-control" rows="1"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>商品類別編號</label>
+                    <textarea name="category_id" class="form-control" rows="1"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>價格</label>
+                    <textarea name="price" class="form-control" rows="1"></textarea>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-success">新增</button>
+                </div>
+            </form>
     </div>
 @endsection

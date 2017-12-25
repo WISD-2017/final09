@@ -24,9 +24,11 @@ class OrderController extends Controller
     $data=['books'=>$books];
     return View('admin.productlist',$data);
   }
-
-  public function productadd(){
-
+  public function store(Request $request){
+      Books::create($request->all());
+      $books=Books::all();
+      $data=['books'=>$books];
+      return View('admin.productlist',$data);
   }
   public function productdel($book_id){
       Books::destroy($book_id);
