@@ -58,7 +58,8 @@
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
-
+          <br/>
+          <br/>
           <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -95,8 +96,7 @@
                   <h4 class="card-title">
                     <a href="{{route('product.shopitem',$book->id)}}">{{$book->book_name}}</a>
                   </h4>
-                  <h5>{{$book->price}}</h5>
-                  <p class="card-text">{{$book->text}}</p>
+                  <h5>${{$book->price}}</h5>
                 </div>
               </div>
             </div>
