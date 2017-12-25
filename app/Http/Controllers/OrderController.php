@@ -24,4 +24,12 @@ class OrderController extends Controller
     $data=['books'=>$books];
     return View('admin.productlist',$data);
   }
+
+  public function productadd(){
+
+  }
+  public function productdel($book_id){
+      Books::destroy($book_id);
+      return redirect()->route('admin.product');
+  }
 }
