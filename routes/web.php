@@ -12,7 +12,6 @@
 */
 
 Route::get('/', ['as' => 'firstpage', function () {
-
     \App\Books::create([
         /*
                 'book_id'=>'001',
@@ -32,10 +31,9 @@ Route::get('/', ['as' => 'firstpage', function () {
         'price' => '237',
 */
     ]);
-
     \App\Bookcategory::create([
-                'category_id'=>'001',
-                'category_name'=>'小說',
+        'category_id'=>'001',
+        'category_name'=>'小說',
         /*
         'category_id' => '002',
         'category_name' => '文學',
