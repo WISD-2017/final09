@@ -13,48 +13,56 @@
                     <div class="container-fluid" style="padding:0;">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1 style="margin-top:0;">{{ $books->title }}</h1>
+                                <h1 style="margin-top:0;">{{ $books->book_name }}</h1>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-8">
-                                @if($books->orderType!=null)
-                                    <span class="badge" style="margin-left:10px;">{{ $books->orderType->name }}</span>
-                                @endif
-                            </div>
                             <div class="col-md-4 text-right">
+                                進貨日期:
                                 {{ $books->created_at->toDateString() }}
                             </div>
                         </div>
                         <hr style="margin:10px 0;" />
                         <div class="row">
-                            <div class="col-md-12" style="height:100px;overflow:hidden;">
-                                {{ $books->content }}
+                            <div class="col-md-12">
+                                商品庫存:
+                                {{ $books->inventory }}
                             </div>
                         </div>
                         <div class="row" style="margin-top:10px;">
-                            <div class="col-md-8">
-                                @if(Auth::check())
-                                    <form method="ORDER" action="{{ route('order.destroy',['post'=>$books->id]) }}">
-                                            <span style="padding-left: 10px;">
-                                                <a class="btn btn-xs btn-primary" href="{{ route('order.show',['order'=>$books->id]) }}">
-                                                    <i class="glyphicon glyphicon-pencil"></i>
-                                                    <span style="padding-left: 5px;">觀看書籍資訊</span>
-                                                </a>
-                                                {{ csrf_field() }}
-                                                <input type="hidden" name="_method" value="DELETE" />
-                                                <button type="submit" class="btn btn-xs btn-danger">
-                                                    <i class="glyphicon glyphicon-trash"></i>
-                                                    <span style="padding-left: 5px;">產品下架</span>
-                                                </button>
-                                            </span>
-                                    </form>
-                                @endif
+                            <div class="col-md-12">
+                                    <a href="{{route('books.destroy',['post'=>$books->id]) }}" class="btn btn-xs btn-danger">產品下架</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         @endforeach
+            <form action="/admin/addproducklist" method="POST" role="form">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label>標題</label>
+                    <input name="book_name" class="form-control" placeholder="請輸入書籍標題">
+                </div>
+                <div class="form-group">
+                    <label>內容</label>
+                    <textarea name="text" class="form-control" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>ISBN</label>
+                    <textarea name="ISBN" class="form-control" rows="1"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>商品類別編號</label>
+                    <textarea name="category_id" class="form-control" rows="1"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>價格</label>
+                    <textarea name="price" class="form-control" rows="1"></textarea>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-success">新增</button>
+                </div>
+            </form>
     </div>
 @endsection

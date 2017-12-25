@@ -14,7 +14,7 @@ class Bookcategory extends Migration
     public function up()
     {
         Schema::create('bookcategory',function (Blueprint $table){
-            $table->string('category_id',10)->index();
+            $table->increments('id');
             $table->string('category_name',10);
             $table->rememberToken();
             $table->timestamps();

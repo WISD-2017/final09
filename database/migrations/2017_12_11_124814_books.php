@@ -14,9 +14,9 @@ class books extends Migration
     public function up()
     {
         Schema::create('books',function (Blueprint $table){
-           $table->string('book_id',10)->index();
+           $table->increments('id');
            $table->string('book_name',255);
-           $table->integer('inventory');
+           $table->integer('inventory')->nullable()	;
            $table->string('ISBN',255);
            $table->string('category_id',10);
            $table->string('text',255);
