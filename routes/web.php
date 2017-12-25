@@ -10,27 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', ['as' => 'firstpage', function () {
-   /* \App\Books::create([
-                'book_id'=>'001',
-                'book_name'=>'教育是一場騙局',
-                'inventory'=>'20',
-                'ISBN'=>'9789571367460',
-                'category_id'=>'001',
-                'text''新書',
-                'price'=>'378',
-
-        'book_id' => '002',
-        'book_name' => '呂世浩細說史記：入門篇',
-        'inventory' => '30',
-        'ISBN' => '9789571371436',
-        'category_id' => '002',
-        'text' => '新書',
-        'price' => '237',
-    ]);
-*/
-
     return view('welcome');
 }]);
 Route::get('test',['as'=>'itfxxkingrow',function(){
@@ -43,7 +23,8 @@ Route::get('test',['as'=>'itfxxkingrow',function(){
         'category_name' => '文學',
     ]);
 }]);
-//
+
+
 // 後台
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/index', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
@@ -53,7 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/orderlist', ['as' => 'admin.order', 'uses' => 'OrderController@order']);
 
     Route::get('/productlist', ['as' => 'admin.product', 'uses' => 'OrderController@product']);
-    Route::get('/addproducklist',['as'=>'books.add','uses'=>'OrderController@productadd']);
+    Route::post('/addproducklist',['as'=>'books.store','uses'=>'OrderController@store']);
     Route::get('/delproductlist/{book_id}',['as'=>'books.destroy','uses'=>'OrderController@productdel']);
 });
 
