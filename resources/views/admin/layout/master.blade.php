@@ -42,7 +42,6 @@
             <div class="container-fluid">
                 <div class="@container">
                     @yield('content')
-                    <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">展開收起菜單</a>
                 </div>
             </div>
         </div>
