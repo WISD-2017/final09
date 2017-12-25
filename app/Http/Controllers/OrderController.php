@@ -21,6 +21,7 @@ class OrderController extends Controller
   }
   public function product(){
     $books=Books::all();
-    return View('admin.productlist')->with('books',$books);
+    $data=['books'=>$books];
+    return View('admin.productlist',$data);
   }
 }
