@@ -12,8 +12,8 @@
 */
 
 Route::get('/', ['as' => 'firstpage', function () {
-    \App\Books::create([
-        /*
+   /* \App\Books::create([
+
                 'book_id'=>'001',
                 'book_name'=>'教育是一場騙局',
                 'inventory'=>'20',
@@ -29,18 +29,17 @@ Route::get('/', ['as' => 'firstpage', function () {
         'category_id' => '002',
         'text' => '新書',
         'price' => '237',
-*/
     ]);
+*/
     \App\Bookcategory::create([
         'category_id'=>'001',
         'category_name'=>'小說',
         /*
         'category_id' => '002',
         'category_name' => '文學',
-*/
-    ]);
-    return view('welcome');
+    */]);
 }]);
+
 //
 // 後台
 Route::group(['prefix' => 'admin'], function () {
@@ -51,7 +50,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::group(['prefix' => 'product'], function () {
-    Route::get('/shoplist', ['as' => 'product.shoplist', 'uses' => 'ProductController@ShowProductList']);
+    Route::get('/shoplist/{categoryid}', ['as' => 'product.shoplist', 'uses' => 'ProductController@ShowProductList']);
     Route::get('/shopitem/{bookid}', ['as' => 'product.shopitem', 'uses' => 'ProductController@ShowProductDetail']);
 });
 
