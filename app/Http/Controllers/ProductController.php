@@ -22,7 +22,7 @@ class ProductController extends Controller
     }
 
     public function ShowProductDetail($bookid){
-        $books=books::all()->where('book_id',$bookid);
+        $books=books::all()->where('id',$bookid);
         $categorys=bookcategory::all();
         return view('product.ShopItem',compact('books','categorys'));
     }
