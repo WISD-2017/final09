@@ -91,7 +91,7 @@
             @foreach($books as $book)
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <a href="{{route('product.shopitem',$book->id)}}"><img class="card-img-top" src="{{url('../image/',$book->path)}}" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="{{route('product.shopitem',$book->id)}}">{{$book->book_name}}</a>
