@@ -60,6 +60,10 @@
                     <label>價格</label>
                     <textarea name="price" class="form-control" rows="1"></textarea>
                 </div>
+                <div class="form-group">
+                    <label>圖片檔名</label>
+                    <textarea name="path" class="form-control" rows="1"></textarea>
+                </div>
                 <div class="text-right">
                     <button type="submit" class="btn btn-success">新增</button>
                 </div>
