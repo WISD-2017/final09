@@ -18,6 +18,7 @@ Route::get('/', ['as' => 'firstpage', function () {
 
 Route::get('/test', ['as' => 'itfxxkingrow', function () {
 
+
     \App\Bookcategory::create([
         'id' => '001',
         'category_name' => '小說',
@@ -27,8 +28,9 @@ Route::get('/test', ['as' => 'itfxxkingrow', function () {
         'category_name' => '文學',
     ]);
 }]);
-
-
+Route::get('/home',['as'=>'home',function(){
+    return view('home');
+}]);
 
 
 // 後台
