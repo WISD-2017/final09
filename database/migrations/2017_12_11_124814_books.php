@@ -21,7 +21,7 @@ class books extends Migration
            $table->string('category_id',10);
            $table->string('text',255);
            $table->integer('price');
-           $table->string('path',255);
+           $table->string('path',255)->nullable();
            $table->rememberToken();
            $table->timestamps();
         });
