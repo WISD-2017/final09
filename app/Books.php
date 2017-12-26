@@ -14,6 +14,7 @@ class Books extends Model
         'category_id',
         'text',
         'price',
+        'path',
     ];
     protected $table="books";
     public function Bookcategury(){
