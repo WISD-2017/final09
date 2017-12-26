@@ -28,7 +28,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">登入會員</a>
+              <a class="nav-link" href="{{ route('login') }}">登入會員</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Services</a>
