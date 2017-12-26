@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Shop Item - Start Bootstrap Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="{{asset('css/shop-item.css')}}" rel="stylesheet">
-
-</head>
-
-<body>
-
-<!-- Navigation -->
+@extends('layouts.product_top')
+@section('title','會員觀看')
+@section('bookcontent')
+</br>
+</br>
+    <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{route('firstpage')}}">誠品書局</a>
@@ -69,7 +52,7 @@
         <div class="col-lg-9">
             @foreach($books as $book)
                 <div class="card mt-4">
-                    <img class="card-img-top img-fluid" src="{{url('../image/',$book->path)}}"width="300px" height="200px" style="border: 5px solid; border-radius: 12px">
+                    <img class="card-img-top img-fluid" src="{{url('../image/',$book->path)}}"alt="">
                     <div class="card-body">
                         @endforeach
                         @foreach ($books as $book)
@@ -117,19 +100,3 @@
 
 </div>
 <!-- /.container -->
-
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-    </div>
-    <!-- /.container -->
-</footer>
-
-<!-- Bootstrap core JavaScript -->
-<script src="{{asset('js/gulpfile')}}"></script>
-
-
-</body>
-
-</html>
