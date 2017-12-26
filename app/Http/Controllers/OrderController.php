@@ -15,10 +15,15 @@ class OrderController extends Controller
       $order = Order::all();
       return view('admin.orderlist')->with('order', $order);
   }
+
   public function member(){
       $member=User::all();
       return View('admin.memberlist')->with('member',$member);
   }
+
+
+
+
   public function product(){
     $books=Books::all();
     $data=['books'=>$books];
