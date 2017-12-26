@@ -10,11 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::auth();
+
 Route::get('/', ['as' => 'firstpage', function () {
     return view('welcome');
 }]);
 
-Route::get('test', ['as' => 'itfxxkingrow', function () {
+Route::get('/test', ['as' => 'itfxxkingrow', function () {
 
     \App\Bookcategory::create([
         'id' => '001',
@@ -24,8 +26,9 @@ Route::get('test', ['as' => 'itfxxkingrow', function () {
         'id' => '002',
         'category_name' => '文學',
     ]);
-
 }]);
+
+
 
 
 // 後台
