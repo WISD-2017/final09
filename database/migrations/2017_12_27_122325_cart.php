@@ -16,6 +16,8 @@ class Cart extends Migration
         Schema::create('carts',function (Blueprint $table){
             $table->string('id')->nullable();
             $table->string('users_id');
+            $table->string('book_name');
+            $table->string('price');
             $table->rememberToken();
             $table->timestamps();
         });
