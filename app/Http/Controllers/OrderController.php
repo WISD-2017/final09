@@ -21,9 +21,6 @@ class OrderController extends Controller
       return View('admin.memberlist')->with('member',$member);
   }
 
-
-
-
   public function product(){
     $books=Books::all();
     $data=['books'=>$books];
@@ -31,6 +28,20 @@ class OrderController extends Controller
   }
   public function store(Request $request){
       Books::create($request->all());
+      $books=Books::all();
+      $data=['books'=>$books];
+      return View('admin.productlist',$data);
+  }
+    public function info($book_id )
+    {
+        $books = Books::all()->where('id','=',$book_id);
+        $data=['books'=>$books];
+        return View('admin.productinfo',$data);
+    }
+  public function update(Request $request,$id)
+  {
+      $books=Books::find($id);
+      $books->update($request->all());
       $books=Books::all();
       $data=['books'=>$books];
       return View('admin.productlist',$data);
