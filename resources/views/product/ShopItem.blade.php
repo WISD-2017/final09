@@ -52,7 +52,7 @@
         <div class="col-lg-9">
             @foreach($books as $book)
                 <div class="card mt-4">
-                    <img class="card-img-top img-fluid" src="{{url('../image/',$book->path)}}"alt="">
+                    <img class="card-img-top img-fluid" src="{{$book->path}}"alt="">
                     <div class="card-body">
                         @endforeach
                         @foreach ($books as $book)
@@ -100,3 +100,4 @@
 
 </div>
 <!-- /.container -->
+@endsection
