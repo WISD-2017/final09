@@ -51,12 +51,13 @@
             @foreach($books as $book)
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="{{route('product.shopitem',$book->id)}}"><img class="card-img-top" src="{{url('../image/',$book->path)}}" alt=""></a>
+                <a href="{{route('product.shopitem',$book->id)}}"><img class="card-img-top" src="{{$book->path}}" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="{{route('product.shopitem',$book->id)}}">{{$book->book_name}}</a>
                   </h4>
                   <h5>${{$book->price}}</h5>
+                  <a href="{{route('product.buyitem', ['id' => $book->id])}}" class="btn btn-success pull-right" role="button">加入購物車</a>
                 </div>
               </div>
             </div>
@@ -69,3 +70,4 @@
       <!-- /.row -->
     </div>
     <!-- /.container -->
+@endsection
