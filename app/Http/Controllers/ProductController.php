@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Books;
 use App\Bookcategory;
+use App\Cart;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -25,5 +27,17 @@ class ProductController extends Controller
         $books=books::all()->where('id',$bookid);
         $categorys=bookcategory::all();
         return view('product.ShopItem',compact('books','categorys'));
+    }
+
+    public function CartPut(Request $request){
+        $user = Auth::user();
+        $cart=new Cart;
+        $cart-> id = $request['id'];
+        $cart-> users_id = $user['email'];
+        $cart->save();
+        $books=books::all();
+        $categorys=bookcategory::all();
+        return view('product.index',compact('categorys','books'));
+
     }
 }
