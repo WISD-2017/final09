@@ -31,14 +31,19 @@
                         </div>
                         <div class="row" style="margin-top:10px;">
                             <div class="col-md-12">
-                                    <a href="{{route('books.destroy',['post'=>$books->id]) }}" class="btn btn-xs btn-danger">產品下架</a>
+                                <a href="{{route('books.info',['book_id'=>$books->id]) }}" class="btn btn-xs btn-danger">產品修改</a>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col-md-12">
+                                <a href="{{route('books.destroy',['book_id'=>$books->id]) }}" class="btn btn-xs btn-danger">產品下架</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         @endforeach
-            <form action="/admin/addproducklist" method="POST" role="form">
+            <form action="/admin/addproductlist" method="POST" role="form">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label>標題</label>
