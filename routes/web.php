@@ -36,14 +36,19 @@ Route::get('/home',['as'=>'home',function(){
 // 後台
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/index', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
-
     Route::get('/memberlist', ['as' => 'admin.member', 'uses' => 'OrderController@member']);
-
     Route::get('/orderlist', ['as' => 'admin.order', 'uses' => 'OrderController@order']);
 
+
     Route::get('/productlist', ['as' => 'admin.product', 'uses' => 'OrderController@product']);
-    Route::post('/addproducklist',['as'=>'books.store','uses'=>'OrderController@store']);
+    Route::post('/addproductlist',['as'=>'books.store','uses'=>'OrderController@store']);
+
+    Route::get('/productfix/{book_id}',['as'=>'books.info','uses'=>'OrderController@info']);
+
+    Route::patch('/fixproductlist/{book_id}',['as'=>'books.update','uses'=>'OrderController@update']);
+
     Route::get('/delproductlist/{book_id}',['as'=>'books.destroy','uses'=>'OrderController@productdel']);
+
 });
 
 Route::group(['prefix' => 'product'], function () {
