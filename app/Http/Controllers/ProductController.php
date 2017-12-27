@@ -34,6 +34,8 @@ class ProductController extends Controller
         $cart=new Cart;
         $cart-> id = $request['id'];
         $cart-> users_id = $user['email'];
+        $cart-> book_name = $request['bookname'];
+        $cart-> price = $request['price'];
         $cart->save();
         $books=books::all();
         $categorys=bookcategory::all();
