@@ -55,6 +55,7 @@ Route::group(['prefix' => 'product'], function () {
     Route::get('/shoplist', ['as' => 'product.shopindex', 'uses' => 'ProductController@ShowProductIndex']);
     Route::get('/shoplist/{categoryid}', ['as' => 'product.shoplist', 'uses' => 'ProductController@ShowProductList']);
     Route::get('/shopitem/{bookid}', ['as' => 'product.shopitem', 'uses' => 'ProductController@ShowProductDetail']);
+    Route::get('/buyitem', ['as' => 'product.buyitem', 'uses' => 'ProductController@CartPut']);
 });
 
 
