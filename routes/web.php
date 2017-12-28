@@ -37,8 +37,9 @@ Route::get('/home',['as'=>'home',function(){
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/index', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
     Route::get('/memberlist', ['as' => 'admin.member', 'uses' => 'OrderController@member']);
-    Route::get('/orderlist', ['as' => 'admin.order', 'uses' => 'OrderController@order']);
+    Route::get('/orderlist', ['as' => 'admin.ord', 'uses' => 'OrderController@ord']);
 
+    Route::post('/orderlist', ['as' => 'admin.order', 'uses' => 'OrderController@order']);
 
     Route::get('/productlist', ['as' => 'admin.product', 'uses' => 'OrderController@product']);
     Route::post('/addproductlist',['as'=>'books.store','uses'=>'OrderController@store']);
