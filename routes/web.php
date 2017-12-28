@@ -15,10 +15,7 @@ Route::auth();
 Route::get('/', ['as' => 'firstpage', function () {
     return view('welcome');
 }]);
-
 Route::get('/test', ['as' => 'itfxxkingrow', function () {
-
-
     \App\Bookcategory::create([
         'id' => '001',
         'category_name' => '小說',
@@ -31,8 +28,6 @@ Route::get('/test', ['as' => 'itfxxkingrow', function () {
 Route::get('/home',['as'=>'home',function(){
     return view('home');
 }]);
-
-
 // 後台
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/index', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
@@ -55,7 +50,9 @@ Route::group(['prefix' => 'product'], function () {
     Route::get('/shoplist', ['as' => 'product.shopindex', 'uses' => 'ProductController@ShowProductIndex']);
     Route::get('/shoplist/{categoryid}', ['as' => 'product.shoplist', 'uses' => 'ProductController@ShowProductList']);
     Route::get('/shopitem/{bookid}', ['as' => 'product.shopitem', 'uses' => 'ProductController@ShowProductDetail']);
-    Route::get('/buyitem', ['as' => 'product.buyitem', 'uses' => 'ProductController@CartPut']);
+    Route::get('/buyitem', ['as' => 'product.buyitem', 'uses' => 'ProductController@store']);
+
+    Route::get('/buycart', ['as' => 'product.buycart', 'uses' => 'ProductController@CartShow']);
 });
 
 
