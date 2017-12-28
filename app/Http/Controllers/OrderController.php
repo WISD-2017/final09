@@ -11,8 +11,13 @@ class OrderController extends Controller
   public function index(){
       return View('admin.index');
   }
-  public function order(){
-      $order = Order::all();
+  public function ord(){
+        $order = Order::all();
+        return view('admin.orderlist')->with('order', $order);}
+
+  public function order(Request $request){
+      $order_id=$request['order_id'];
+      $order = Order::all()->where('order_id','=',$order_id);
       return view('admin.orderlist')->with('order', $order);
   }
 
@@ -20,12 +25,12 @@ class OrderController extends Controller
       $member=User::all();
       return View('admin.memberlist')->with('member',$member);
   }
-
   public function product(){
     $books=Books::all();
     $data=['books'=>$books];
     return View('admin.productlist',$data);
   }
+
   public function store(Request $request){
       Books::create($request->all());
       $books=Books::all();

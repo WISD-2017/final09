@@ -38,7 +38,6 @@
                     <button type="submit" class="btn btn-success">修改完成</button>
                 </div>
             </form>
-
         @endforeach
     </div>
 @endsection
