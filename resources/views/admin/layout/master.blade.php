@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('admin.order')}}">訂單觀看</a>
+                    <a href="{{route('admin.ord')}}">訂單觀看</a>
                 </li>
                 <li>
                     <a href="{{route('admin.product')}}">商品管理</a>
