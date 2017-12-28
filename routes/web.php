@@ -31,8 +31,6 @@ Route::get('/test', ['as' => 'itfxxkingrow', function () {
 Route::get('/home',['as'=>'home',function(){
     return view('home');
 }]);
-
-
 // 後台
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/index', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
