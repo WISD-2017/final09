@@ -57,7 +57,7 @@
                     <a href="{{route('product.shopitem',$book->id)}}">{{$book->book_name}}</a>
                   </h4>
                   <h5>${{$book->price}}</h5>
-                  <a href="{{route('product.buyitem', ['id'=>$book->id])}}" class="btn btn-success pull-right" role="button">加入購物車</a>
+                      <a href="{{route('product.buyitem', ['id'=>$book->id])}}" class="btn btn-success pull-right" role="button">加入購物車</a>
                 </div>
               </div>
             </div>
