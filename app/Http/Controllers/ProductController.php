@@ -23,15 +23,19 @@ class ProductController extends Controller
     }
 
     public function ShowProductDetail($bookid){
+
         $books=books::all()->where('id',$bookid);
         $categorys=bookcategory::all();
         return view('product.ShopItem',compact('books','categorys'));
     }
     public function store(Request $request){
         $user = Auth::user();
+        if ($user == null){
+            return view('auth.login');
+        }
         $cart=new Cart;
-        $cart-> id = $request['id'];
-        $cart-> users_id = $user['email'];
+        $cart-> id =$user['email'];
+        $cart-> users_id =  $request['id'];
         $cart->save();
         $books = books::all();
         $categorys = bookcategory::all();
@@ -39,13 +43,20 @@ class ProductController extends Controller
     }
     public function CartShow(){
         $user = Auth::user();
-        $user_data = cart::all()->where('users_id',$user['email']);
+        $user_data = cart::all()->where('id',$user['email']);
         $a=array();
         foreach ($user_data as $user_data)
         {
-            array_push($a,$user_data->id);
+            array_push($a,$user_data->users_id);
         }
         $books=Books::all()->wherein('id',$a);
-        return view('product.shoppingcart')->with('books',$books);
+
+        return view('product.shoppingcart',compact('books'));
+    }
+
+    public function CartDeleter(){
+        $user = Auth::user();
+        Cart::destroy($user['email']);
+        return redirect()->route('product.buycart');
     }
 }
