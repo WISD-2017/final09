@@ -11,6 +11,8 @@
         </tr>
         </thead>
         <tbody>
+
+
         @foreach($books as $books)
         <tr>
             <td data-th="Product">
@@ -22,11 +24,11 @@
                     </div>
                 </div>
             </td>
-            <td data-th="Price">$1.99</td>
+            <td data-th="Price">${{$books->price}}</td>
             <td data-th="Quantity">
-                <input type="number" class="form-control text-center" value="1">
+                <input type="number" name="num" class="form-control text-center" value= "1">
             </td>
-            <td data-th="Subtotal" class="text-center">1.99</td>
+            <td data-th="Subtotal" class="text-center">{{$books->price}}</td>
             <td class="actions" data-th="">
                 <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
                 <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
@@ -39,7 +41,7 @@
             <td class="text-center"><strong>Total 1.99</strong></td>
         </tr>
         <tr>
-            <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td><a href="{{route('product.cartdestroy')}}" class="btn btn-warning"><i class="fa fa-angle-left"></i>送出訂單</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
             <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
