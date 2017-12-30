@@ -56,7 +56,7 @@
                     <div class="card-body">
                         @endforeach
                         @foreach ($books as $book)
-                            <p>書名{{$book->book_name}}</p>
+                            <p>書名：{{$book->book_name}}</p>
                             <p>價格：${{$book->price}}</p>
                         @endforeach
                         書籍介紹：
@@ -75,19 +75,6 @@
                         @foreach($books as $book)
                             <p class="card-text">ISBN:{{$book->ISBN}}</p>
                         @endforeach
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore,
-                            similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat
-                            laborum.
-                            Sequi mollitia, necessitatibus quae sint natus.</p>
-                        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore,
-                            similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat
-                            laborum.
-                            Sequi mollitia, necessitatibus quae sint natus.</p>
-                        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                        <hr>
                         <a href="#" class="btn btn-success">Leave a Review</a>
                     </div>
                 </div>
