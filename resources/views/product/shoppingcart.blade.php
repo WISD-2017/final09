@@ -17,10 +17,10 @@
         <tr>
             <td data-th="Product">
                 <div class="row">
-                    <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+                    <div class="col-sm-2 hidden-xs"><img src="{{$books->path}}" alt="profile Pic" height="100" width="100" class="img-responsive"/></div>
                     <div class="col-sm-10">
                             <h4 class="nomargin">{{$books->book_name}}</h4>
-                        <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+                        <p>{{$books->text}}</p>
                     </div>
                 </div>
             </td>
