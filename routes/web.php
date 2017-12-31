@@ -54,6 +54,7 @@ Route::group(['prefix' => 'product'], function () {
     Route::get('/buyitem', ['as' => 'product.buyitem', 'uses' => 'ProductController@store']);
     Route::get('/deletecart',['as'=>'product.cartdestroy','uses'=>'ProductController@CartDeleter']);
     Route::get('/buycart', ['as' => 'product.buycart', 'uses' => 'ProductController@CartShow']);
+    Route::get('/singledeletecart', ['as' => 'product.singlecartdestroy', 'uses' => 'ProductController@CartsingleDeleter']);
 });
 
 
