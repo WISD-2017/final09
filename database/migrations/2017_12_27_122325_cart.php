@@ -15,7 +15,7 @@ class Cart extends Migration
     {
         Schema::create('carts',function (Blueprint $table){
             $table->string('id');
-            $table->string('users_id');
+            $table->string('user_email');
             $table->rememberToken();
             $table->timestamps();
         });
