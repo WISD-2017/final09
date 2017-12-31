@@ -12,7 +12,6 @@
         </thead>
         <tbody>
 
-
         @foreach($books as $books)
         <tr>
             <td data-th="Product">
@@ -29,9 +28,11 @@
                 <input type="number" name="num" class="form-control text-center" value= "1">
             </td>
             <td data-th="Subtotal" class="text-center">{{$books->price}}</td>
-            <td class="actions" data-th="">
-                <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+            <td class="col-sm-1 col-md-1">
+                <a href="{{route('product.singlecartdestroy',['id' => $books->id])}}"> <button type="button" class="btn btn-danger">
+                        <span class="fa fa-remove"></span> 移除
+                    </button>
+                </a>
             </td>
         </tr>
         @endforeach
@@ -42,6 +43,7 @@
         </tr>
         <tr>
             <td><a href="{{route('product.cartdestroy')}}" class="btn btn-warning"><i class="fa fa-angle-left"></i>送出訂單</a></td>
+            <td><a href="{{route('product.shopindex')}}" class="btn btn-warning"><i class="fa fa-angle-left"></i>回到首頁</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
             <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
