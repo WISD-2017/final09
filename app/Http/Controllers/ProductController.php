@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Books;
 use App\Bookcategory;
 use App\Cart;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -34,8 +35,8 @@ class ProductController extends Controller
             return view('auth.login');
         }
         $cart=new Cart;
-        $cart-> id =$user['email'];
-        $cart-> users_id =  $request['id'];
+        $cart-> id = $request['id'];
+        $cart-> user_email = $user['email'];
         $cart->save();
         $books = books::all();
         $categorys = bookcategory::all();
@@ -43,11 +44,11 @@ class ProductController extends Controller
     }
     public function CartShow(){
         $user = Auth::user();
-        $user_data = cart::all()->where('id',$user['email']);
+        $user_data = cart::all()->where('user_email',$user['email']);
         $a=array();
         foreach ($user_data as $user_data)
         {
-            array_push($a,$user_data->users_id);
+            array_push($a,$user_data->id);
         }
         $books=Books::all()->wherein('id',$a);
 
@@ -56,7 +57,15 @@ class ProductController extends Controller
 
     public function CartDeleter(){
         $user = Auth::user();
-        Cart::destroy($user['email']);
+        $whereArray = array('user_email'=>$user['email']);
+        DB::table('carts')->where($whereArray)->delete();
+        return redirect()->route('product.buycart');
+    }
+
+    public function CartsingleDeleter(Request $request){
+        $user = Auth::user();
+        $whereArray = array('id'=>$request['id'],'user_email'=>$user['email']);
+        DB::table('carts')->where($whereArray)->delete();
         return redirect()->route('product.buycart');
     }
 }
