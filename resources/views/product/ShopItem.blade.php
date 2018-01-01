@@ -45,8 +45,8 @@
                     <div class="card-body">
                         @foreach($books as $book)
                             <p class="card-text">ISBN:{{$book->ISBN}}</p>
+                        <a href="{{route('product.singlebuyitem', ['id'=>$book->id])}}" class="btn btn-success">加入購物車</a>
                         @endforeach
-                        <a href="#" class="btn btn-success">Leave a Review</a>
                     </div>
                 </div>
                 <!-- /.card -->
