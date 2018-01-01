@@ -42,6 +42,22 @@ class ProductController extends Controller
         $categorys = bookcategory::all();
         return view('product.index', compact('categorys', 'books'));
     }
+
+    public function singlestore(Request $request){
+        $user = Auth::user();
+        if ($user == null){
+            return view('auth.login');
+        }
+        $cart=new Cart;
+        $cart-> id = $request['id'];
+        $cart-> user_email = $user['email'];
+        $cart->save();
+        $books = $request['id'];
+        $books=books::all()->where('id',$request['id']);
+        $categorys=bookcategory::all();
+        return view('product.ShopItem',compact('books','categorys'));
+    }
+
     public function CartShow(){
         $user = Auth::user();
         $user_data = cart::all()->where('user_email',$user['email']);
