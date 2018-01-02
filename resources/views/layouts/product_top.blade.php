@@ -32,7 +32,7 @@
                     <a class="nav-link" href="{{ route('login') }}">登入會員</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" href="{{route('product.buycart')}}">購物車</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>

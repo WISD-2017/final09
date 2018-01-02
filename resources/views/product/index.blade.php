@@ -10,9 +10,9 @@
           <h1 class="my-4">商品列表</h1>
           <div class="list-group">
             <h3 class="my-4">書籍類別</h3>
-            @foreach($categorys as $category)
-            <a href="{{route('product.shoplist',$category->id)}}" class="list-group-item">{{$category->category_name}}</a>
-              @endforeach
+            @foreach($categorys as $categorys)
+            <a href="{{route('product.shoplist',$categorys->id)}}" class="list-group-item">{{$categorys->category_name}}</a>
+            @endforeach
           </div>
         </div>
         <!-- /.col-lg-3 -->
@@ -57,7 +57,7 @@
                     <a href="{{route('product.shopitem',$book->id)}}">{{$book->book_name}}</a>
                   </h4>
                   <h5>${{$book->price}}</h5>
-                  <a href="{{route('product.buyitem', ['id'=>$book->id],['bookname'=>$book->book_name],['price'=>$book->price])}}" class="btn btn-success pull-right" role="button">加入購物車</a>
+                  <a href="{{route('product.buyitem', ['id'=>$book->id])}}" class="btn btn-success pull-right" role="button">加入購物車</a>
                 </div>
               </div>
             </div>
