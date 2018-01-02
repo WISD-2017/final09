@@ -28,9 +28,15 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">登入會員</a>
+                    </li>
+                    @else
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">登入會員</a>
+                    <a class="nav-link" href="{{ route('login') }}">{{ Auth::user()->name }}</a>
                 </li>
+                        @endguest
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('product.buycart')}}">購物車</a>
                 </li>

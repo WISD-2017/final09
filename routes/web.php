@@ -52,8 +52,10 @@ Route::group(['prefix' => 'product'], function () {
     Route::get('/shoplist/{categoryid}', ['as' => 'product.shoplist', 'uses' => 'ProductController@ShowProductList']);
     Route::get('/shopitem/{bookid}', ['as' => 'product.shopitem', 'uses' => 'ProductController@ShowProductDetail']);
     Route::get('/buyitem', ['as' => 'product.buyitem', 'uses' => 'ProductController@store']);
-
+    Route::get('/deletecart',['as'=>'product.cartdestroy','uses'=>'ProductController@CartDeleter']);
     Route::get('/buycart', ['as' => 'product.buycart', 'uses' => 'ProductController@CartShow']);
+    Route::get('/singledeletecart', ['as' => 'product.singlecartdestroy', 'uses' => 'ProductController@CartsingleDeleter']);
+    Route::get('/singlebuyitem', ['as' => 'product.singlebuyitem', 'uses' => 'ProductController@singlestore']);
 });
 
 

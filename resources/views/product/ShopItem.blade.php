@@ -3,35 +3,6 @@
 @section('bookcontent')
 </br>
 </br>
-    <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="{{route('firstpage')}}">誠品書局</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{route('product.shopindex')}}">首頁
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">登入會員</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <!-- Page Content -->
 <div class="container">
 
@@ -56,7 +27,7 @@
                     <div class="card-body">
                         @endforeach
                         @foreach ($books as $book)
-                            <p>書名{{$book->book_name}}</p>
+                            <p>書名：{{$book->book_name}}</p>
                             <p>價格：${{$book->price}}</p>
                         @endforeach
                         書籍介紹：
@@ -74,21 +45,8 @@
                     <div class="card-body">
                         @foreach($books as $book)
                             <p class="card-text">ISBN:{{$book->ISBN}}</p>
+                        <a href="{{route('product.singlebuyitem', ['id'=>$book->id])}}" class="btn btn-success">加入購物車</a>
                         @endforeach
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore,
-                            similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat
-                            laborum.
-                            Sequi mollitia, necessitatibus quae sint natus.</p>
-                        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore,
-                            similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat
-                            laborum.
-                            Sequi mollitia, necessitatibus quae sint natus.</p>
-                        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                        <hr>
-                        <a href="#" class="btn btn-success">Leave a Review</a>
                     </div>
                 </div>
                 <!-- /.card -->
