@@ -71,7 +71,9 @@ class ProductController extends Controller
         return view('product.shoppingcart',compact('books'));
     }
 
-    public function CartDeleter(){
+    public function CartDeleter(Request $request){
+
+
         $user = Auth::user();
         $whereArray = array('user_email'=>$user['email']);
         DB::table('carts')->where($whereArray)->delete();
