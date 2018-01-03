@@ -16,8 +16,8 @@
         <tr>
             <td data-th="Product">
                 <div class="row">
-                    <div class="col-sm-2 hidden-xs"><img src="{{$books->path}}" alt="profile Pic" height="100" width="100" class="img-responsive"/></div>
-                    <div class="col-sm-10">
+                    <div class="col-sm-3 hidden-xs"><img src="{{$books->path}}" alt="profile Pic" height="100" width="100" class="img-responsive"/></div>
+                    <div class="col-sm-7">
                             <h4 class="nomargin">{{$books->book_name}}</h4>
                         <p>{{$books->text}}</p>
                     </div>
@@ -39,14 +39,14 @@
         </tbody>
         <tfoot>
         <tr class="visible-xs">
-            <td class="text-center"><strong>Total 1.99</strong></td>
+            <td class="text-center"><strong></strong></td>
         </tr>
         <tr>
             <td><a href="{{route('product.cartdestroy')}}" class="btn btn-warning"><i class="fa fa-angle-left"></i>送出訂單</a></td>
             <td><a href="{{route('product.shopindex')}}" class="btn btn-warning"><i class="fa fa-angle-left"></i>回到首頁</a></td>
             <td colspan="2" class="hidden-xs"></td>
-            <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
-            <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+            <td class="hidden-xs text-center"><strong></strong></td>
+            <td><a  class="hidden-xs text-center"> <i class="fa fa-angle-right"></i></a></td>
         </tr>
         </tfoot>
     </table>
