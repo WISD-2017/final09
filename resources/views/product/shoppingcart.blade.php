@@ -16,9 +16,6 @@
         <tr>
             <td data-th="Product">
                 <div class="row">
-
-                    <div class="col-sm-3"><img src="{{$books->path}}" alt="profile Pic" height="100" width="100" /></div>
-
                     <div class="col-sm-3 hidden-xs"><img src="{{$books->path}}" alt="profile Pic" height="100" width="100" class="img-responsive"/></div>
 
                     <div class="col-sm-7">
