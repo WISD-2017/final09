@@ -46,7 +46,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/delproductlist/{book_id}',['as'=>'books.destroy','uses'=>'OrderController@productdel']);
 
 });
-
+//前台
 Route::group(['prefix' => 'product'], function () {
     Route::get('/shoplist', ['as' => 'product.shopindex', 'uses' => 'ProductController@ShowProductIndex']);
     Route::get('/shoplist/{categoryid}', ['as' => 'product.shoplist', 'uses' => 'ProductController@ShowProductList']);
