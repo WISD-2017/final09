@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About ourproject
+## About our project
 Our Bookcategory need to used the "localhost:8000/test" to creat category data .<br>
 All of our data can be creat by itself .<br>
 The Book'picture is using the url formate .<br>
