@@ -8,8 +8,8 @@
 </p>
 
 ## About ourproject
-Our Bookcategory need to used the "localhost:8000/test" to creat category data .
-All of our data can be creat by itself .
-The Book'picture is using the url formate .
-example:http://pic.eslite.com/Upload/Product/201701/m/636204117125643750.jpg
-Our admin interface did't have to login  ,just use the "localhost:8000/admin/index" to explore.
+Our Bookcategory need to used the "localhost:8000/test" to creat category data .<br>
+All of our data can be creat by itself .<br>
+The Book'picture is using the url formate .<br>
+example:http://pic.eslite.com/Upload/Product/201701/m/636204117125643750.jpg<br>
+Our admin interface did't have to login  ,just use the "localhost:8000/admin/index" to explore.<br>
